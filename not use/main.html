@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renzo - маркетплейс игровых товаров</title>
+    <link rel="icon" href="../images/image.jpg" type="image/jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg,  #000000, #b5b5b5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 950px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 40px; /* Было 30px */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #9a4acf, #f7b32a); /* Градиент */
+            -webkit-background-clip: text; /* Обрезка фона по тексту (для WebKit браузеров) */
+            -webkit-text-fill-color: transparent; /* Заполнение текста прозрачным цветом (для WebKit браузеров) */
+            text-fill-color: transparent; /* Заполнение текста прозрачным цветом (для других браузеров) */
+            color: #4f46e5;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #ffffff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(1deg, #59e6f0, #0e0eb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+        }
+
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px; /* Было 15px */
+            margin-bottom: 35px;
+            padding: 10px;
+        }
+
+        .game-item {
+            color: white; /* Цвет текста */
+            text-decoration: none; /* Убираем подчеркивание */
+            padding: 20px; /* Было 14px */
+            margin-bottom: 5px; /* Добавить вертикальный отступ */
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-item:hover {
+            background: linear-gradient(1deg, #4f46e5, #0e0eb3);
+            transform: translateY(-4px);
+        }
+
+        .app-list {
+            display: grid;
+            grid-template-columns: repeat(2, max-content); /* Фиксируем 2 колонки */
+            justify-content: center; /* Центрирование по горизонтали */
+            gap: 30px;
+            margin: 0 auto; /* Автоматические отступы по бокам */
+            padding: 10px;
+            max-width: 500px; /* Ограничиваем максимальную ширину */
+        }
+
+        .app-item {
+            width: 300px; /* Фиксированная ширина элементов */
+            text-align: center;
+            color: white; /* Цвет текста */
+            text-decoration: none; /* Убираем подчеркивание */
+            padding: 20px; /* Было 14px */
+            margin-bottom: 5px; /* Добавить вертикальный отступ */
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .app-item:hover {
+            background: linear-gradient(1deg, #4f46e5, #0e0eb3);
+            transform: translateY(-4px);
+        }
+        .premium-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px; /* Было 15px */
+            margin-bottom: 35px;
+            padding: 10px;
+
+        }
+
+        .premium-item {
+            color: white; /* Цвет текста */
+            text-decoration: none; /* Убираем подчеркивание */
+            padding: 20px; /* Было 14px */
+            margin-bottom: 5px; /* Добавить вертикальный отступ */
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .premium-item:hover {
+            background: linear-gradient(1deg, #4f46e5, #0e0eb3);
+            transform: translateY(-4px);
+
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-title">Renzo</div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            🎮 | <span class="gradient-text">Игры</span>
+        </h2>
+        <div class="game-list">
+            <a href="../item-page.html" class="game-item" target="_blank">Brawl Stars</a>
+            <a href="../item-page.html" class="game-item" target="_blank">PUBG: MOBILE</a>
+            <a href="../item-page.html" class="game-item" target="_blank">Roblox</a>
+            <a href="../item-page.html" class="game-item" target="_blank">Standoff 2</a>
+            <a href="../item-page.html" class="game-item" target="_blank">Fortnite</a>
+            <a href="../item-page.html" class="game-item" target="_blank">Counter-Strike 2</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">
+            💻 | <span class="gradient-text">Приложения</span>
+        </h2>
+        <div class="app-list">
+            <a href="../item-page.html" class="app-item" target="_blank">Telegram</a>
+            <a href="../item-page.html" class="app-item" target="_blank">Steam</a>
+        </div>
+    </div>
+    <div class="section">
+        <h2 class="section-title">
+            💎 | <span class="gradient-text">Премиум Товары</span>
+        </h2>
+        <div class="premium-list">
+            <a href="https://example.com" class="premium-item" target="_blank">Steam</a>
+            <a href="https://example.com" class="premium-item" target="_blank">Telegram</a>
+            <a href="https://example.com" class="premium-item" target="_blank">Roblox</a>
+            <a href="https://example.com" class="premium-item" target="_blank">Standoff 2</a>
+            <a href="https://example.com" class="premium-item" target="_blank">Fortnite</a>
+            <a href="https://example.com" class="premium-item" target="_blank">Counter-Strike 2</a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Renzo 2025
+    </div>
+</div>
+</body>
+</html>
